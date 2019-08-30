@@ -1,0 +1,10 @@
+kubeadm join 172.31.47.241:6443 --token kevrux.8n7dgu2di0mtpono \
+    --discovery-token-ca-cert-hash sha256:a7218f9f0fa21997cd73b67e132e9b23ce617e2a0bf7927a69c3a26b4ec8b1bb
+
+
+sudo kubectl run my-app --image=andalike/node-web-app --port=8080
+sudo kubectl expose deployment my-app --type=LoadBalancer --port=8080 --target-port=8080
+sudo kubectl get svc
+
+<<Optional For New Deployment>>
+kubectl set image deployment/my-app  my-app=andalike/node-web-app
