@@ -6,5 +6,8 @@ sudo kubectl run my-app --image=andalike/node-web-app --port=8080
 sudo kubectl expose deployment my-app --type=LoadBalancer --port=8080 --target-port=8080
 sudo kubectl get svc
 
+Run the command: sudo kubectl get svc
+Chec the Port(s) and the port should be mapped to  a port, which is the port the service is mapped to
+
 <<Optional For New Deployment>>
 kubectl set image deployment/my-app  my-app=andalike/node-web-app
